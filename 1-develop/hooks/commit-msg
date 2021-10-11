@@ -22,27 +22,27 @@ MERGE_REGEX="^Merge (branch|tag)*"
 ERROR_MSG="Commit message irregular，Please check!"
 ERROR_MSG_TOOLONG="Commit message too long，Please show me more detail"
 SUCCESS_MSG="Commit success!"
-while read -r oldrev newrev refname ; do
-for COMMIT in $(git rev-list "$oldrev".."$newrev")
+while read -r oldrev newrev refname; do
+for COMMIT in $(git rev-list "$oldrev".."$newrev")
 do
-MESSAGE=$(git cat-file commit "$COMMIT" | sed '1,/^$/d')
-echo "Checking: $MESSAGE"
+MESSAGE=$(git cat-file commit "$COMMIT" | sed '1,/^$/d')
+echo "Checking: $MESSAGE"
 
-if ! echo "$MESSAGE" | grep -iqE "$MERGE_REGEX"; then
+if ! echo "$MESSAGE" | grep -iqE "$MERGE_REGEX"; then
 continue
 fi
 
-if ! echo "$MESSAGE" | grep -iqE "$REGEX"; then
-echo "$ERROR_MSG: $MESSAGE" >&2
-exit 1
+if ! echo "$MESSAGE" | grep -iqE "$REGEX"; then
+echo "$ERROR_MSG: $MESSAGE" >&2
+exit 1
 fi
 
-if [ ${#MESSAGE} -gt 72 ]; then
-echo "$ERROR_MSG_TOOLONG(${#MESSAGE}):$MESSAGE" >&2
-exit 1
+if [ ${#MESSAGE} -gt 72 ]; then
+echo "$ERROR_MSG_TOOLONG(${#MESSAGE}):$MESSAGE" >&2
+exit 1
 fi
 
 done
 done
-echo "$SUCCESS_MSG"
-exit 0
+echo "$SUCCESS_MSG"
+exit 0

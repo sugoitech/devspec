@@ -1,0 +1,24 @@
+#!/bin/sh
+
+MESSAGE=$(cat "$1")
+MERGE_MSG=$(echo "$MESSAGE" | grep -E '^Merge (branch|tag)*')
+
+if [ "$MERGE_MSG" != "" ]; then
+   exit 0
+fi
+
+COMMIT_MSG=$(echo "$MESSAGE" | grep -E "^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(\w+[/]?\w+\))?:\s(\S|\w)+")
+
+if [ "$COMMIT_MSG" = "" ]; then
+   echo "Commit message irregular，Please check!"
+   echo "Message:" "$MESSAGE"
+   exit 1
+fi
+
+if [ ${#COMMIT_MSG} -gt 72 ]; then
+   echo "Commit message too long，Please show me more detail!"
+   exit 1
+fi
+
+echo "Commit success!"
+exit 0

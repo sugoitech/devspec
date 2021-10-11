@@ -1,4 +1,4 @@
-# Commit Message 格式
+# 提交规范(Commit Message 格式)
 
 ## 模板
 ```
@@ -54,7 +54,9 @@
 ## 使用
 
 ### 检查脚本
-将[commit-msg](./hooks/commit-msg)复制到`项目/.git/hooks`文件夹下。
+服务器端使用[commit-msg](./pre-commit/commit-msg)。
+客户端将[commit-msg](./hooks/commit-msg)复制到`项目/.git/hooks`文件夹下，开启提交检查。
+
 
 ### 模板工具
 Jetbrain可下载插件`Git Commit Template`
