@@ -37,7 +37,7 @@ echo "$ERROR_MSG: $MESSAGE" >&2
 exit 1
 fi
 
-if [ ${#MESSAGE} -gt 72 ]; then
+if [ ${#MESSAGE} -gt 72 ]; then
 echo "$ERROR_MSG_TOOLONG(${#MESSAGE}):$MESSAGE" >&2
 exit 1
 fi
