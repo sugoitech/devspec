@@ -1,4 +1,16 @@
-# 开发（后端GO部分）
+# 开发
+
+## 后端GO部分代码规范
+
+1. [目录结构](go-structure.md)
+2. [编码规范](go-coding.md)
+
+## 前端部分代码规范
+
+1. [目录结构](front-structure.md)
+2. [编码规范](front-coding.md)
+
+## 其他部分代码规范
 
 1. [目录结构](structure.md)
 2. [编码规范](coding.md)
