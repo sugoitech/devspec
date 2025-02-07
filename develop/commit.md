@@ -1,5 +1,7 @@
 # Commit Message 规范
 
+## 本规范遵循 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/v1.0.0/)
+
 ## 提交规范(Commit Message 格式)
 
 ### 模板
@@ -113,7 +115,7 @@
 
 ### 模板工具
 
-Jetbrain 可下载插件 `Git Commit Template`
+JetBrains 可下载插件 `Git Commit Template`
 
 - **其他 IDE 支持**：
     - VS Code 用户可以安装 `GitLens` 插件，它提供了丰富的 Git 提交模板支持。

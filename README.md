@@ -26,7 +26,7 @@
 
 ## 规范
 
-- [开发](./1-develop/root.md)
+- [开发](./develop/root.md)
 
 ## 贡献指南
 
